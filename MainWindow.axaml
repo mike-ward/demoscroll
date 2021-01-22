@@ -1,0 +1,39 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="DemoScroll.MainWindow"
+        xmlns:sys="clr-namespace:System.IO;assembly=System.Runtime"
+        Width="500"
+        Title="DemoScroll">
+
+  <Grid RowDefinitions="Auto,*">
+    <TextBlock>Demo Scroll</TextBlock>
+
+    <ScrollViewer
+     Grid.Row="1"
+      Margin="0 0 5 0"
+      HorizontalScrollBarVisibility="Disabled">
+
+      <ItemsRepeater
+        Margin="0 0 5 0"
+        Items="{Binding $parent[Window].Items}">
+
+        <ItemsRepeater.ItemTemplate>
+          <DataTemplate>
+            <StackPanel>
+              <TextBlock TextWrapping="Wrap" Margin="0 0 0 3" Text="{Binding}" />
+              <TextBlock TextWrapping="Wrap" Margin="0 0 0 3" Text="{Binding}" FontWeight="Bold" />
+              <TextBlock TextWrapping="Wrap" Margin="0 0 0 3" Text="{Binding}" />
+            </StackPanel>
+          </DataTemplate>
+        </ItemsRepeater.ItemTemplate>
+
+        <ItemsRepeater.Layout>
+          <WrapLayout />
+        </ItemsRepeater.Layout>
+      </ItemsRepeater>
+    </ScrollViewer>
+  </Grid>
+</Window>
