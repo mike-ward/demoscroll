@@ -29,6 +29,10 @@
             </StackPanel>
           </DataTemplate>
         </ItemsRepeater.ItemTemplate>
+
+        <ItemsRepeater.Layout>
+          <WrapLayout />
+        </ItemsRepeater.Layout>
       </ItemsRepeater>
     </ScrollViewer>
   </Grid>
